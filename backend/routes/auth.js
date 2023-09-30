@@ -61,7 +61,7 @@ const{email, password} = req.body;
 try {
     let user = await User.findOne({email});
     if(!user){
-        success
+       
         return res.status(400).json({errors:"login with correct credential"});
     }
     const passwordcompare = await bcrypt.compare(password, user.password);

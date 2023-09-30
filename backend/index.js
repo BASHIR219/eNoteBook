@@ -14,11 +14,11 @@ app.use(cors(
     credentials : true
 }
 ));
-app.use(express.json());
 
 // Handle preflight requests for all routes
 app.options('*', cors());
 
+app.use(express.json());
 //availabe routes
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/notes', require('./routes/notes'));
